@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {% for data in datas %}
+        <p>Code lieu : {{ data.codeLieuAnalyse }}</p>
+        <p>Code paramètre : {{ data.codeParametre  | link(data.codeParametre) | raw }}</p>
+        <p>Libelle : {{ data.libelleParametre }}</p>
+        <p>Commune : {{ data.nomCommune }}</p>
+        <p>Date de prélèvement : {{ data.datePrelevement | date('d-m-Y') }}</p>
+        <hr/>
+    {%  endfor %}
+    <p>Nombre d'analyse : {{ datas | length }}</p>
+{% endblock %}
