@@ -35,3 +35,7 @@ services:
         
     App\Storage\FileStorage:
         tags: [ 'app.storage_method' ]
+
+    App\EventSubscriber\SomethingAnnotationSubscriber:
+        tags:
+            - { name: kernel.event_subscriber, event: kernel.controller, method: onKernelController }
